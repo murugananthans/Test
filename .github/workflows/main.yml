@@ -64,10 +64,10 @@ jobs:
         with:
           name: php-app          
           #path: "php-app-dep/"
-          #run: unzip php-app-dep/release.zip
+          #run: unzip release.zip
            
       - name: unzip artifact for deployment
-        run: unzip php-app-dep/release.zip      
+        run: unzip release.zip      
           
       - name: 'Deploy to Azure VM'
         #id: deploy-to-webapp       
@@ -82,7 +82,7 @@ jobs:
           username : ${{secrets.USER}}          
           port : ${{secrets.PORT}}
           password : ${{secrets.PASS}}          
-          source : php-app-dep/*
+          source : elgg-4.3.4/*
           target: /var/www/html/testxm         
           run: |
              sudo whoami
