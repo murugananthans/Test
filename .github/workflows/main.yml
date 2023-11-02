@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Devops'
+      name: 'main'
       #CI : true
             
     steps:
