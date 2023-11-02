@@ -67,7 +67,7 @@ jobs:
           #run: unzip php-app-dep/release.zip
            
       - name: unzip artifact for deployment
-        run: unzip release.zip      
+        run: unzip php-app-dep/release.zip      
           
       - name: 'Deploy to Azure VM'
         #id: deploy-to-webapp       
@@ -82,8 +82,8 @@ jobs:
           username : ${{secrets.USER}}          
           port : ${{secrets.PORT}}
           password : ${{secrets.PASS}}          
-          #source : /*
-          #target: /var/www/html/testxm         
+          source : php-app-dep/*
+          target: /var/www/html/testxm         
           run: |
              sudo whoami
                   
