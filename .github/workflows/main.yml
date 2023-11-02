@@ -82,8 +82,8 @@ jobs:
           username : ${{secrets.USER}}          
           port : ${{secrets.PORT}}
           password : ${{secrets.PASS}}          
-          source : /*
-          target: /var/www/html/testxm         
+          #source : /*
+          #target: /var/www/html/testxm         
           run: |
              sudo whoami
                   
@@ -92,7 +92,7 @@ jobs:
            ls -al
            pwd
            steps:
-      - uses: actions/github-script@v6
-        with:
-          run: | 
-            whoami
+      #- uses: actions/github-script@v6
+        #with:
+         # run: | 
+           # whoami
