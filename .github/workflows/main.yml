@@ -67,7 +67,7 @@ jobs:
           #run: unzip release.zip
            
       - name: unzip artifact for deployment
-        run: unzip php-app-dep/release.zip      
+        run: unzip release.zip      
           
       - name: 'Deploy to Azure VM'
         #id: deploy-to-webapp       
