@@ -63,11 +63,11 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: php-app          
-          #path: "php-app-dep/"
+          path: "php-app-dep/"
           #run: unzip release.zip
            
       - name: unzip artifact for deployment
-        run: unzip release.zip      
+        run: unzip php-app-dep/release.zip      
           
       - name: 'Deploy to Azure VM'
         #id: deploy-to-webapp       
@@ -82,7 +82,7 @@ jobs:
           username : ${{secrets.USER}}          
           port : ${{secrets.PORT}}
           password : ${{secrets.PASS}}          
-          source : elgg-4.3.4/*
+          source : php-app-dep/*
           target: /var/www/html/testxm         
           run: |
              sudo whoami
